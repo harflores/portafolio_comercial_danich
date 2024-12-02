@@ -12,29 +12,28 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      // crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        CustomCards(
-          titleCard: 'Agroindustria',
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        CustomCards(
-          titleCard: 'Logistica',
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        CustomCards(
-          titleCard: 'Alimentaria',
-        ),
-        SizedBox(
-          width: 10,
-        ),
-      ],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Center(
+          child: Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            alignment: WrapAlignment.center,
+            children: const [
+              CustomCards(
+                titleCard: 'Agroindustria',
+              ),
+              CustomCards(
+                titleCard: 'Logistica',
+              ),
+              CustomCards(
+                titleCard: 'Alimentaria',
+              ),
+              // Agrega más CustomCards aquí si es necesario
+            ],
+          ),
+        );
+      },
     );
   }
 }

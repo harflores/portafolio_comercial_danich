@@ -37,8 +37,15 @@ class App extends StatelessWidget {
             ),
             backgroundColor: constants.primaryColor,
           ),
-          body: const Center(
-            child: HomeScreen()
+          body: Scrollbar(
+            thumbVisibility: true,
+            thickness: 10,
+            trackVisibility: true,
+            child: SingleChildScrollView(
+              child: const Center(
+                child: HomeScreen(),
+              ),
+            ),
           ),
         ),
       ),
