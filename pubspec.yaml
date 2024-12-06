@@ -49,6 +49,8 @@ icons_launcher:
       enable: true
     ios:
       enable: true
+    web:
+      enable: true
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -70,8 +72,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icon/icon.png
+    - assets/icon/
     - assets/images/
+    - assets/images/sector-agro/
+    - assets/images/sector-logis/
+    - assets/images/sector-alim/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

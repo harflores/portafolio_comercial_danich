@@ -38,16 +38,32 @@ class DrawerCustom extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20,),
-          CustomListTile( title: 'Inicio', icon: Icons.home,),
+          SizedBox(
+            height: 20,
+          ),
+          CustomListTile(
+            title: 'Inicio',
+            icon: Icons.home,
+            routeString: '/home',
+          ),
           Divider(),
-          CustomListTile( title: 'Agroindustria', icon: Icons.conveyor_belt,),
-          CustomListTile( title: 'Logistica', icon: Icons.conveyor_belt,),
-          CustomListTile( title: 'Alimentaria', icon: Icons.conveyor_belt,),
+          CustomListTile(
+            title: 'Agroindustria',
+            icon: Icons.conveyor_belt,
+            routeString: '/agroHome',
+          ),
+          CustomListTile(
+            title: 'Logistica',
+            icon: Icons.conveyor_belt,
+            routeString: '/select',
+          ),
+          CustomListTile(
+            title: 'Alimentaria',
+            icon: Icons.conveyor_belt,
+            routeString: '/select',
+          ),
         ],
       ),
     );
   }
 }
-
-

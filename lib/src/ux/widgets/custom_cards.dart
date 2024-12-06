@@ -1,43 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomCards extends StatelessWidget {
+import '../../controllers/home_controller.dart';
+
+class CustomCards extends StatefulWidget {
+  final Object tag;
   final String titleCard;
+  final String imageCard;
+  final String routeString;
   const CustomCards({
     super.key,
     required this.titleCard,
+    required this.imageCard,
+    required this.routeString,
+    required this.tag,
   });
 
+  @override
+  State<CustomCards> createState() => _CustomCardsState();
+}
+
+class _CustomCardsState extends State<CustomCards> {
+  final homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20, bottom: 20),
-      child: Container(
-          // height: 360,
-          child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-        elevation: 3,
-        margin: EdgeInsets.zero,
-        child: Column(
-          children: [
-            Hero(
-                tag: 'tag',
-                child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
-                  child: Image.asset(
-                    'assets/images/300x300.png',
-                    fit: BoxFit.cover,
-                  ),
-                )),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(titleCard),
-            )
-          ],
-        ),
-      )),
+      child: GestureDetector(
+        onTap: () {
+          Get.toNamed(widget.routeString);
+          homeController.currentRoute.value = widget.routeString;
+        },
+        child: Container(
+            // height: 360,
+            child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          elevation: 3,
+          margin: EdgeInsets.zero,
+          child: Column(
+            children: [
+              Hero(
+                  tag: widget.tag,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    ),
+                    child: Image.asset(
+                      height: 300,
+                      width: 300,
+                      widget.imageCard,
+                      fit: BoxFit.cover,
+                    ),
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(widget.titleCard),
+              ),
+            ],
+          ),
+        )),
+      ),
     );
   }
 }
