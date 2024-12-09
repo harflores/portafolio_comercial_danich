@@ -10,8 +10,11 @@ class DrawerCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var divider = Divider(
+      thickness: 3,
+    );
     return Drawer(
-      backgroundColor: constants.secondaryColor,
+      backgroundColor: constants.whiteColor,
       elevation: 20,
       child: ListView(
         padding: EdgeInsets.zero,
@@ -46,22 +49,25 @@ class DrawerCustom extends StatelessWidget {
             icon: Icons.home,
             routeString: '/home',
           ),
-          Divider(),
+          divider,
           CustomListTile(
             title: 'Agroindustria',
             icon: Icons.conveyor_belt,
             routeString: '/agroHome',
           ),
+          divider,
           CustomListTile(
             title: 'Logistica',
             icon: Icons.conveyor_belt,
             routeString: '/select',
           ),
+          divider,
           CustomListTile(
             title: 'Alimentaria',
             icon: Icons.conveyor_belt,
             routeString: '/select',
           ),
+          divider,
         ],
       ),
     );

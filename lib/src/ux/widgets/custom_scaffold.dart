@@ -23,16 +23,21 @@ class _CustomScaffoldState extends State<CustomScaffold> {
     return Scaffold(
         drawer: DrawerCustom(),
         appBar: AppBar(
+          leadingWidth: 100,
+          toolbarHeight: 100,
           actions: [
             if (homeController.currentRoute.value != '/')
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: constants.whiteColor,
-                ), // Botón de retroceso
-                onPressed: () {
-                  Navigator.of(context).pop(); // Navegar hacia atrás
-                },
+              Container(
+                padding: EdgeInsets.all(10),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: constants.whiteColor,
+                  ), // Botón de retroceso
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Navegar hacia atrás
+                  },
+                ),
               ),
           ],
           elevation: 1,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portafolio_comercial_danich/src/ux/widgets/custom_scaffold.dart';
-import 'package:portafolio_comercial_danich/src/controllers/home_controller.dart'; // Importa el controlador
 
+import '../../controllers/home_controller.dart';
 import '../widgets/custom_cards.dart';
+import '../widgets/custom_scaffold.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

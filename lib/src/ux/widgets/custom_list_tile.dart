@@ -18,11 +18,12 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final homeController = Get.put(HomeController());
     return ListTile(
-      leading: Icon(icon, color: constants.primaryColor),
-      title: Text(
-        title,
-        style: TextStyle(color: constants.blackColor),
+      leading: Icon(
+        icon,
+        color: constants.primaryColor,
+        size: 40,
       ),
+      title: Text(title, style: constants.DrawerTextStyle),
       onTap: () {
         Get.toNamed(routeString);
         homeController.currentRoute.value = routeString;

@@ -12,6 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: GetMaterialApp(
+        scrollBehavior: ScrollBehavior(),
         debugShowCheckedModeBanner: false,
         title: constants.titleApp.value,
         initialRoute: '/',

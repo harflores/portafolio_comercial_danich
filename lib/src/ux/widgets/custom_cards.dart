@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/home_controller.dart';
+import '../../utils/constants.dart' as constants;
 
 class CustomCards extends StatefulWidget {
   final Object tag;
@@ -32,11 +33,11 @@ class _CustomCardsState extends State<CustomCards> {
           homeController.currentRoute.value = widget.routeString;
         },
         child: Container(
-            // height: 360,
             child: Card(
+          color: constants.primaryColor,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-          elevation: 3,
+          elevation: 10,
           margin: EdgeInsets.zero,
           child: Column(
             children: [
@@ -49,14 +50,17 @@ class _CustomCardsState extends State<CustomCards> {
                     ),
                     child: Image.asset(
                       height: 300,
-                      width: 300,
+                      width: 400,
                       widget.imageCard,
                       fit: BoxFit.cover,
                     ),
                   )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(widget.titleCard),
+                child: Text(
+                  widget.titleCard,
+                  style: constants.cardTextStyle,
+                ),
               ),
             ],
           ),
