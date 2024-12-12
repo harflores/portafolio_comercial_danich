@@ -9,12 +9,12 @@ class CustomSingleChildScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scrollbar(
-        controller: ScrollController(),
-        radius: Radius.circular(25),
-        trackVisibility: true,
-        thickness: 10,
+    return Scrollbar(
+      radius: Radius.circular(25),
+      trackVisibility: true,
+      thumbVisibility: true,
+      thickness: 10,
+      child: SingleChildScrollView(
         child: child,
       ),
     );

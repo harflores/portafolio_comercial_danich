@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/home_controller.dart';
-import 'drawer_custom.dart';
+import 'custom_drawer.dart';
 import '../../utils/constants.dart' as constants;
 
 class CustomScaffold extends StatefulWidget {

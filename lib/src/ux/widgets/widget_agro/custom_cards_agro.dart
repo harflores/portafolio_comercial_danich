@@ -7,12 +7,12 @@ import '../../../utils/constants.dart' as constants;
 class CustomCardsAgro extends StatefulWidget {
   final Object tag;
   final String titleCard;
-  final String imageCard;
+  final String? imageCard;
   final String routeString;
   const CustomCardsAgro({
     super.key,
     required this.titleCard,
-    required this.imageCard,
+    this.imageCard,
     required this.routeString,
     required this.tag,
   });
@@ -34,7 +34,7 @@ class _CustomCardsAgroState extends State<CustomCardsAgro> {
         },
         child: Container(
             margin: EdgeInsets.all(30),
-            // height: 360,
+            width: 400,
             child: Card(
               surfaceTintColor: constants.primaryColor,
               color: constants.primaryColor,
@@ -53,9 +53,11 @@ class _CustomCardsAgroState extends State<CustomCardsAgro> {
                           topRight: Radius.circular(20),
                         ),
                         child: Image.asset(
+                          widget.imageCard == null
+                              ? "assets/icon/icon.png"
+                              : widget.imageCard!,
                           height: 400,
                           width: double.infinity,
-                          widget.imageCard,
                           fit: BoxFit.fitWidth,
                         ),
                       )),

@@ -38,6 +38,7 @@ dependencies:
   icons_launcher: ^3.0.0
   get: ^4.6.6
   flutter_native_splash: ^2.4.3
+  easy_pdf_viewer: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +79,8 @@ flutter:
     - assets/images/globales/
     - assets/images/sector-agro/
     - assets/images/sector-logis/
+    - assets/images/sector-logis/pdf/
+    - assets/images/sector-logis/pdf/brochure_2024.pdf
     - assets/images/sector-alim/
 
   # An image asset can refer to one or more resolution-specific "variants", see

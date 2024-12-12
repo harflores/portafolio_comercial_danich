@@ -24,19 +24,16 @@ class _AgroHomeScreenState extends State<AgroHomeScreen> {
               children: [
                 CustomCardsAgro(
                   titleCard: "Tipo de Proyecto",
-                  imageCard: "assets/images/sector-agro/type_proyect_agro.webp",
                   routeString: "/select",
                   tag: "tipo_proyecto_agro",
                 ),
                 CustomCardsAgro(
                   titleCard: "Videos",
-                  imageCard: "assets/images/globales/img-video.jpg",
                   routeString: "/select",
                   tag: "video_proyecto_agro",
                 ),
                 CustomCardsAgro(
                   titleCard: "Brochure",
-                  imageCard: "assets/images/globales/brochure.webp",
                   routeString: "/select",
                   tag: "brochure_proyecto_agro",
                 ),
