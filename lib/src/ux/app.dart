@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portafolio_comercial_danich/src/utils/utils.dart';
-import 'package:portafolio_comercial_danich/src/ux/screen/home_screen.dart';
+
 
 import '../utils/constants.dart' as constants;
+import '../utils/utils.dart';
+import 'screen/home_screen.dart';
+
 
 class App extends StatelessWidget {
   const App({super.key});

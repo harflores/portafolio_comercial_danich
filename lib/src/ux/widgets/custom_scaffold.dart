@@ -21,7 +21,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: DrawerCustom(),
+        drawer: CustomDrawer(),
         appBar: AppBar(
           leadingWidth: 100,
           toolbarHeight: 100,

@@ -76,6 +76,8 @@ flutter:
   assets:
     - assets/icon/
     - assets/images/
+    - assets/images/home/
+    - assets/images/drawer/
     - assets/images/globales/
     - assets/images/sector-agro/
     - assets/images/sector-logis/

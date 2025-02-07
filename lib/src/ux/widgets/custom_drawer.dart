@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../utils/constants.dart' as constants;
-import 'custom_list_tile.dart';
 
-class DrawerCustom extends StatelessWidget {
-  const DrawerCustom({
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     var divider = Divider(
-      thickness: 3,
+      thickness: 1,
     );
     return Drawer(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero,
+      ),
+      width: 400,
       backgroundColor: constants.whiteColor,
       elevation: 20,
       child: ListView(
@@ -22,52 +26,59 @@ class DrawerCustom extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(
               color: constants.primaryColor,
+              image: DecorationImage(
+                image: AssetImage("assets/images/drawer/header_drawer.png"),
+                fit: BoxFit.cover,
+              ),
             ),
-            child: Column(
-              children: [
-                Image.asset(
-                  constants.urlCircularLogo,
-                  width: 50,
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  constants.titleApp.value,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            child: null,
+          ),
+          ButtonTheme(
+            child: GestureDetector(
+              child: Image.asset("assets/images/drawer/btn_ini_drawer.png"),
+              onTap: () => Get.toNamed("/"),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          CustomListTile(
-            title: 'Inicio',
-            icon: Icons.home,
-            routeString: '/home',
+            hoverColor: constants.primaryColor,
+            splashColor: constants.primaryColor,
           ),
           divider,
-          CustomListTile(
-            title: 'Agroindustria',
-            icon: Icons.conveyor_belt,
-            routeString: '/agroHome',
+          ButtonTheme(
+            child: GestureDetector(
+              child: Image.asset("assets/images/drawer/btn_agro_drawer.png"),
+              onTap: () => Get.toNamed("/agroHome"),
+            ),
+            hoverColor: constants.primaryColor,
+            splashColor: constants.primaryColor,
           ),
           divider,
-          CustomListTile(
-            title: 'Logistica',
-            icon: Icons.conveyor_belt,
-            routeString: '/select',
+          ButtonTheme(
+            child: GestureDetector(
+              child: Image.asset("assets/images/drawer/btn_log_drawer.png"),
+              onTap: () => Get.toNamed("/logisHome"),
+            ),
+            hoverColor: constants.primaryColor,
+            splashColor: constants.primaryColor,
           ),
           divider,
-          CustomListTile(
-            title: 'Otras Industrias',
-            icon: Icons.conveyor_belt,
-            routeString: '/select',
+          ButtonTheme(
+            child: GestureDetector(
+              child: Image.asset("assets/images/drawer/btn_ot_drawer.png"),
+              onTap: () => Get.toNamed("/agroHome"),
+            ),
+            hoverColor: constants.primaryColor,
+            splashColor: constants.primaryColor,
           ),
           divider,
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("assets/images/drawer/footer_drawer.png"),
+              fit: BoxFit.contain,
+            )),
+            // width: 350,
+            height: 260,
+            alignment: Alignment.center,
+          )
         ],
       ),
     );

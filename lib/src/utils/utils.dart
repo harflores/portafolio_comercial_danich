@@ -5,6 +5,7 @@ import '../ux/screen/home_screen.dart';
 import '../ux/screen/logis_screen/brochure_screen.dart';
 import '../ux/screen/logis_screen/logistic_screen.dart';
 import '../ux/screen/select_screen.dart';
+import '../ux/screen/soluciones/sis_almacenaje.dart';
 
 class Utils {
   //Routes definicion de screens
@@ -14,6 +15,6 @@ class Utils {
     GetPage(name: '/agroHome', page: () => const AgroHomeScreen()),
     GetPage(name: '/logisHome', page: () => const LogisticScreen()),
     GetPage(name: '/brochureLogistic', page: () => const BrochureScreen()),
-
+    GetPage(name: '/sisAlmacenaje', page: () => const SisAlmacenajeScreen()),
   ];
 }
