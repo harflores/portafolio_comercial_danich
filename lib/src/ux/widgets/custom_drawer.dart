@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
           ButtonTheme(
             child: GestureDetector(
               child: Image.asset("assets/images/drawer/btn_agro_drawer.png"),
-              onTap: () => Get.toNamed("/agroHome"),
+              onTap: () => Get.toNamed("/select"),
             ),
             hoverColor: constants.primaryColor,
             splashColor: constants.primaryColor,
@@ -54,7 +54,7 @@ class CustomDrawer extends StatelessWidget {
           ButtonTheme(
             child: GestureDetector(
               child: Image.asset("assets/images/drawer/btn_log_drawer.png"),
-              onTap: () => Get.toNamed("/logisHome"),
+              onTap: () => Get.toNamed("/select"),
             ),
             hoverColor: constants.primaryColor,
             splashColor: constants.primaryColor,
@@ -63,7 +63,7 @@ class CustomDrawer extends StatelessWidget {
           ButtonTheme(
             child: GestureDetector(
               child: Image.asset("assets/images/drawer/btn_ot_drawer.png"),
-              onTap: () => Get.toNamed("/agroHome"),
+              onTap: () => Get.toNamed("/select"),
             ),
             hoverColor: constants.primaryColor,
             splashColor: constants.primaryColor,

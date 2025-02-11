@@ -33,13 +33,13 @@ class CustomContainer extends StatelessWidget {
               onTap: () {
                 switch (page){
                   case 0:
-                    Get.toNamed("/agroHome");
+                    Get.toNamed("/select");
                     break;
                   case 1:
-                    Get.toNamed("/logisHome");
+                    Get.toNamed("/select");
                     break;
                   case 2:
-                    Get.toNamed("/agroHome");
+                    Get.toNamed("/select");
                     break;
                 }
               },

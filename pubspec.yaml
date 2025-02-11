@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   flutter_native_splash: ^2.4.3
   easy_pdf_viewer: ^1.0.8
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +77,8 @@ flutter:
   assets:
     - assets/icon/
     - assets/images/
+    - assets/images/mn_interno/
+    - assets/images/mn_interno/sistemas/
     - assets/images/home/
     - assets/images/drawer/
     - assets/images/globales/
