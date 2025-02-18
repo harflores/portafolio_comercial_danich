@@ -36,7 +36,7 @@ class CustomDrawer extends StatelessWidget {
           ButtonTheme(
             child: GestureDetector(
               child: Image.asset("assets/images/drawer/btn_ini_drawer.png"),
-              onTap: () => Get.toNamed("/"),
+              onTap: () => Get.offNamed("/"),
             ),
             hoverColor: constants.primaryColor,
             splashColor: constants.primaryColor,

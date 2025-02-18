@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portafolio_comercial_danich/src/ux/widgets/custom_scaffold.dart';
 
 import '../../controllers/home_controller.dart';
-import '../../utils/constants.dart' as constants;
 import '../widgets/custom_container.dart';
-import '../widgets/custom_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,26 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final HomeController homeController =
       Get.put(HomeController()); // Inicializa el controlador
   final PageController _pageController = PageController();
-  final GlobalKey<ScaffoldState> _scaffoldKey =
-      GlobalKey<ScaffoldState>(); // GlobalKey para el Scaffold
   @override
   Widget build(BuildContext context) {
     homeController.currentRoute.value = "/";
-    return Scaffold(
-      key: _scaffoldKey, // Asignamos la clave al Scaffold
-      drawer: CustomDrawer(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(top: 20, left: 20),
-        child: FloatingActionButton(
-          onPressed: () {
-            _scaffoldKey.currentState
-                ?.openDrawer(); // Abrimos el Drawer correctamente
-          },
-          backgroundColor: constants.secondaryColor,
-          child: Icon(Icons.menu, color: Colors.white),
-        ),
-      ),
+    return CustomScaffold(
       body: Stack(
         children: [
           PageView(
@@ -64,4 +47,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

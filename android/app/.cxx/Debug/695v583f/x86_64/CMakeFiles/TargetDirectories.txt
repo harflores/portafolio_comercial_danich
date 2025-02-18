@@ -1,0 +1,2 @@
+C:/DANICH/portafolio_comercial_danich/android/app/.cxx/Debug/695v583f/x86_64/CMakeFiles/edit_cache.dir
+C:/DANICH/portafolio_comercial_danich/android/app/.cxx/Debug/695v583f/x86_64/CMakeFiles/rebuild_cache.dir

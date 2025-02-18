@@ -7,59 +7,37 @@ import '../../utils/constants.dart' as constants;
 
 class CustomScaffold extends StatefulWidget {
   final Widget body;
+  final Widget? bottomNavigationBar;
   const CustomScaffold({
     super.key,
-    required this.body,
+    required this.body, this.bottomNavigationBar,
   });
 
   @override
   State<CustomScaffold> createState() => _CustomScaffoldState();
 }
-
 class _CustomScaffoldState extends State<CustomScaffold> {
+final GlobalKey<ScaffoldState> scaffoldKey =
+      GlobalKey<ScaffoldState>(); // GlobalKey para el Scaffold
   final homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: CustomDrawer(),
-        appBar: AppBar(
-          leadingWidth: 100,
-          toolbarHeight: 100,
-          actions: [
-            if (homeController.currentRoute.value != '/')
-              Container(
-                padding: EdgeInsets.all(10),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: constants.whiteColor,
-                  ), // Botón de retroceso
-                  onPressed: () {
-                    Navigator.of(context).pop(); // Navegar hacia atrás
-                  },
-                ),
-              ),
-          ],
-          elevation: 1,
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: constants.circularLogo,
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-          title: Text(
-            constants.titleApp.value,
-            style: TextStyle(
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          backgroundColor: constants.primaryColor,
+      bottomNavigationBar: widget.bottomNavigationBar == null ? null : widget.bottomNavigationBar,
+        key: scaffoldKey,
+      drawer: CustomDrawer(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(top: 20, left: 20),
+        child: FloatingActionButton(
+          onPressed: () {
+            scaffoldKey.currentState
+                ?.openDrawer(); // Abrimos el Drawer correctamente
+          },
+          backgroundColor: constants.secondaryColor,
+          child: Icon(Icons.menu, color: Colors.white),
         ),
+      ),
         body: widget.body);
   }
 }
